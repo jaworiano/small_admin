@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
+<head><meta charset="UTF-8"></head>
+    <title>{% block title %}
+                Small Admin
+        {% endblock %}
+    </title>
 <body>
-$END$
+
+    <div>
+        <a href="{% url 'computers' %}"> Lista komputerów</a>
+    </div>
+    <h1> SmallAdmin tools</h1>
+
+    {% block content %}
+{%  include 'templates/map_image.html' %}
+    {% endblock %}
+    <footer>Kontakt</footer>
+
 </body>
 </html>
