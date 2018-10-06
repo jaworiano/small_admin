@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2> Lista pracowników działu Environmental:</h2>
+
+<img src="https://image.ibb.co/iMmjZK/2.png" usemap="#image-map">
+
+<map name="image-map">
+    <area target="_blank" alt="7" title="{{object.7.name}}" href="employee_list/7" coords="21,42,108,126" shape="rect">
+    <area target="_self" alt="2" title="2" href="11" coords="21,129,109,212" shape="rect">
+    <area target="_self" alt="3" title="3" href="12" coords="110,41,193,123" shape="rect">
+    <area target="_self" alt="4" title="4" href="15" coords="195,213,111,129" shape="rect">
+    <area target="_self" alt="5" title="5" href="16" coords="197,43,283,125" shape="rect">
+    <area target="_self" alt="6" title="6" href="17" coords="282,211,197,130" shape="rect">
+    <area target="_self" alt="7" title="7" href="18" coords="370,126,286,45" shape="rect">
+    <area target="_self" alt="8" title="8" href="19" coords="369,212,285,129" shape="rect">
+    <area target="_self" alt="9" title="9" href="22" coords="458,214,372,128" shape="rect">
+    <area target="_self" alt="10" title="10" href="24" coords="373,47,457,123" shape="rect">
+    <area target="_self" alt="11" title="11" href="25" coords="458,48,545,125" shape="rect">
+    <area target="_self" alt="12" title="12" href="27" coords="460,129,544,215" shape="rect">
+</map>
+
+    <ul>
+        {% for object in object_list %}
+            <li><a href="/employee_list/{{ object.id }}">{{ object.name }} {{object.last_name }} </a></li>
+
+            </li>
+        {% empty %}
+            Brak komputerów w bazie
+        {% endfor %}
+    </ul>
+{% endblock %}

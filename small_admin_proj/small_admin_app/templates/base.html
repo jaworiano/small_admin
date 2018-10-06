@@ -5,17 +5,26 @@
                 Small Admin
         {% endblock %}
     </title>
-<body>
+<body background="https://www.gscouncil.org/wp-content/uploads/2016/07/light-background.jpg">
 
     <div>
-        <a href="{% url 'computers' %}"> Lista komputerów</a>
+        <a href="{% url 'basic' %}"> Strona główna</a> ||
+        <a href="{% url 'division' %}"> Lista działów</a> ||
+        <a href="{% url 'employee-all' %}"> Lista pracowników</a> ||
+        <a href="{% url 'computers' %}"> Lista komputerów</a> ||
+        <a href="{% url 'employee_form' %}"> Dodaj pracownika</a> ||
+        <a href="{% url 'computer_form' %}"> Dodaj komputer</a> ||
+
+
+
     </div>
-    <h1> SmallAdmin tools</h1>
+    <h1>SmallAdmin Tools</h1>
 
     {% block content %}
-{%  include 'templates/map_image.html' %}
     {% endblock %}
-    <footer>Kontakt</footer>
+    <footer>
+        <a href="{% url 'contact' %}"> Kontakt</a>
+    </footer>
 
 </body>
 </html>

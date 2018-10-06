@@ -15,7 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from small_admin_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('computer_list/', views.ComputerListView.as_view(), name='computers'),
+    path('', views.MapView.as_view(), name='basic'),
+    path('employee_list/', views.EmployeeListView.as_view(), name='employee'),
+    path('employee_list_all/', views.AllEmployeeListView.as_view(), name='employee-all'),
+    path('divisions/', views.DivisionView.as_view(), name='division'),
+    path('divisions_detail/<int:division_id>', views.DivisionDetailView.as_view(), name='division-detail'),
+    path('employee_list/<int:employee_id>', views.EmployeeDetailView.as_view(), name='employee-detail'),
+    path('computer_form/', views.ComputerFormView.as_view(), name='computer_form'),
+    path('employee_form/', views.EmployeeFormView.as_view(), name='employee_form'),
+    path('edit_employee/<int:employee_id>/', views.EmployeeUpdateView.as_view(), name='employee-edit'),
+    path('contact/', views.ContactView.as_view(), name= 'contact'),
+
 ]

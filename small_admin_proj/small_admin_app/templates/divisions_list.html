@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2> Lista wszystkich działów</h2>
+
+
+    <ul>
+        {% for object in object_list %}
+          <li><a href="/divisions_detail/{{ object.id }}"><i>{{object.name}}</i></a></li>
+         <!--    <li><a href=" {{employee.get_absolute_url}}">{{employee.name|upper}} {{employee.last_name}}</a>  -->
+            </li>
+        {% empty %}
+            Brak komputerów w bazie
+        {% endfor %}
+    </ul>
+{% endblock %}

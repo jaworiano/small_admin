@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Najpierw załatw mu do pracy komputer</title>
 </head>
 <body>
-$END$
+    {% block content %}
+<h2>Najpierw załatw mu do pracy komputer</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+                {{form}}
+            <input type="submit" value="Dodaj komputer">
+        </form>
+
+
+    {% endblock %}
+
 </body>
-</html>

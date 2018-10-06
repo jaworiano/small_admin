@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <td>Imię:</td>
+        <td>Nazwisko:</td>
+        <td>Dział:</td>
+        <td>Numer komputera:</td>
+    </tr>
+    <tr>
+        <td>{{employee.name}}</td>
+        <td>{{employee.last_name}}</td>
+        <td>{{employee.division_user.name}}</td>
+        <td>{{employee.user_computer.name}}</td>
+
+    </tr>
+</table>
+
+
+
+{% endblock %}
